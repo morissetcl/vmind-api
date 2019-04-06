@@ -13,7 +13,8 @@ namespace :scrap do
         verse_number = verse.css('a')[0].text
         Verse.where(name: verse_number).first_or_create do |v|
           v.content = verse.css('.result-wrap').text.strip
-          v.topic = ['Joy', 'Love', 'Parent']
+          v.need = 'Love'
+          v.theme = 'Parent'
         end
       end
     end
