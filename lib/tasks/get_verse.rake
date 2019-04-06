@@ -8,6 +8,8 @@ namespace :scrap do
     bible_amour_conjoint
     bible_amour_seigneur
     bible_amour_fraternel
+    bible_pardon_peche
+    bible_pardon_distant
   end
 
   def bible_amour_parent
@@ -51,6 +53,28 @@ namespace :scrap do
       html_file = URI.parse(link).open
       html_doc = Nokogiri::HTML(html_file)
       create_verse(html_doc: html_doc, need: 'Love', theme: 'Friends')
+    end
+  end
+
+  def bible_pardon_peche
+    puts 'bible_pardon_peche'
+    topic = ['Pardon-Des-Peches', 'Pardon-Par-Le-Repentir', 'Pardon,-Divin', 'Pardon,-Dans-Le-Ministere-Du-Christ', 'Dieu-A-Pardonne']
+    topic.each do |t|
+      link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
+      html_file = URI.parse(link).open
+      html_doc = Nokogiri::HTML(html_file)
+      create_verse(html_doc: html_doc, need: 'Forgiveness', theme: 'Sin')
+    end
+  end
+
+  def bible_pardon_distant
+    puts 'bible_pardon_distant'
+    topic = ['Pardonner-Aux-Autres', 'Pardonner-Aux-Ennemis', 'Se-Pardonner-Les-Uns-Les-Autres']
+    topic.each do |t|
+      link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
+      html_file = URI.parse(link).open
+      html_doc = Nokogiri::HTML(html_file)
+      create_verse(html_doc: html_doc, need: 'Forgiveness', theme: 'Distant')
     end
   end
 
