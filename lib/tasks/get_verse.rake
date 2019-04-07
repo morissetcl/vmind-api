@@ -17,6 +17,9 @@ namespace :scrap do
     bible_sante_mentale
     bible_sante_esprit
     bible_remerciement_none
+    bible_courage_travail
+    bible_courage_tentation
+    bible_courage_verite
   end
 
   def bible_amour_parent
@@ -159,6 +162,39 @@ namespace :scrap do
       html_file = URI.parse(link).open
       html_doc = Nokogiri::HTML(html_file)
       create_verse(html_doc: html_doc, need: 'Praises', theme: 'None')
+    end
+  end
+
+  def bible_courage_travail
+    puts 'bible_courage_travail'
+    topic = ['Avoir-Confiance-En-Le-Travail', 'Dur-Travail', 'Dieu-Travaillant-Toujours', 'Faire-Son-Travail', 'Les-Avantages-Du-Travail']
+    topic.each do |t|
+      link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
+      html_file = URI.parse(link).open
+      html_doc = Nokogiri::HTML(html_file)
+      create_verse(html_doc: html_doc, need: 'Courage', theme: 'Work')
+    end
+  end
+
+  def bible_courage_tentation
+    puts 'bible_courage_tentation'
+    topic = ['Jesus-Christ,-Tentation-De', 'Tentation,-Resister']
+    topic.each do |t|
+      link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
+      html_file = URI.parse(link).open
+      html_doc = Nokogiri::HTML(html_file)
+      create_verse(html_doc: html_doc, need: 'Courage', theme: 'Tentation')
+    end
+  end
+
+  def bible_courage_verite
+    puts 'bible_courage_verite'
+    topic = ['Dire-La-Verite', 'Faire-La-Verite', 'Le-Christ-Disant-La-Verite', 'Marcher-Dans-La-Verite', 'Verite']
+    topic.each do |t|
+      link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
+      html_file = URI.parse(link).open
+      html_doc = Nokogiri::HTML(html_file)
+      create_verse(html_doc: html_doc, need: 'Courage', theme: 'Truth')
     end
   end
 
