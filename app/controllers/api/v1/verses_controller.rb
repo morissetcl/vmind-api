@@ -3,7 +3,6 @@ module Api
     class VersesController < Api::BaseController
       def index
         @verses = Verse.where(need: params[:need], theme: params[:theme])
-        p @verses 
         render 'index', formats: [:json], status: 200
       end
     end
