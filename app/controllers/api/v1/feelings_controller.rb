@@ -5,6 +5,10 @@ module Api
         @feeling = Feeling.create!(feelings_params)
       end
 
+      def index
+        @feelings = Feeling.where(deviceId: params[:deviceId])
+      end
+
       private
 
       def feelings_params
