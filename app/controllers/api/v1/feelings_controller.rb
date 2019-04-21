@@ -7,6 +7,7 @@ module Api
 
       def index
         @feelings = Feeling.where(deviceId: params[:deviceId])
+        render 'index', formats: [:json], status: 200
       end
 
       private
