@@ -42,7 +42,8 @@ namespace :scrap do
 
   def bible_amour_conjoint
     puts 'bible_amour_conjoint'
-    topic = ['Devoir-Des-Maris-Envers-Les-Epouses', 'Etre-Un-Mari', 'Mariage,-Le-Marie', 'Enfants,-Besoins-De']
+    topic = ['Devoir-Des-Maris-Envers-Les-Epouses', 'Etre-Un-Mari', 'Mariage,-Le-Marie',
+             'Enfants,-Besoins-De']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
@@ -51,7 +52,8 @@ namespace :scrap do
 
   def bible_amour_seigneur
     puts 'bible_amour_seigneur'
-    topic = ['Avoir-Confiance-En-L~amour-De-Dieu', 'Amour-Bienveillant-De-Dieu', 'Dieu-Montre-L~amour-Bienveillant', 'Jesus-Christ,-Amour-De']
+    topic = ['Avoir-Confiance-En-L~amour-De-Dieu', 'Amour-Bienveillant-De-Dieu',
+             'Dieu-Montre-L~amour-Bienveillant', 'Jesus-Christ,-Amour-De']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
@@ -69,7 +71,8 @@ namespace :scrap do
 
   def bible_pardon_peche
     puts 'bible_pardon_peche'
-    topic = ['Pardon-Des-Peches', 'Pardon-Par-Le-Repentir', 'Pardon,-Divin', 'Pardon,-Dans-Le-Ministere-Du-Christ', 'Dieu-A-Pardonne']
+    topic = ['Pardon-Des-Peches', 'Pardon-Par-Le-Repentir', 'Pardon,-Divin',
+             'Pardon,-Dans-Le-Ministere-Du-Christ', 'Dieu-A-Pardonne']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
@@ -96,7 +99,8 @@ namespace :scrap do
 
   def bible_foi_esperance
     puts 'bible_foi_esperance'
-    topic = ['Attitudes-D~espoir', 'Espoir,-En-Dieu', 'Espoir,-En-Tant-Que-Confiance', 'Espoir,-Exemples-De', 'Espoir,-Resultats-De-Son-Absence']
+    topic = ['Attitudes-D~espoir', 'Espoir,-En-Dieu', 'Espoir,-En-Tant-Que-Confiance',
+             'Espoir,-Exemples-De', 'Espoir,-Resultats-De-Son-Absence']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
@@ -123,7 +127,9 @@ namespace :scrap do
 
   def bible_sante_esprit
     puts 'bible_sante_esprit'
-    topic = ['Coeur,-Et-L~esprit-Saint', 'Confiance,-De-L~esprit-Saint', 'Don-De-L~esprit-Saint', 'Esprit,-De-Dieu', 'Etre-Rempli-Par-L~esprit']
+    topic = ['Coeur,-Et-L~esprit-Saint', 'Confiance,-De-L~esprit-Saint',
+             'Don-De-L~esprit-Saint', 'Esprit,-De-Dieu',
+             'Etre-Rempli-Par-L~esprit']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
@@ -132,7 +138,8 @@ namespace :scrap do
 
   def bible_remerciement_none
     puts 'bible_remerciement_none'
-    topic = ['Priere,-En-Tant-Que-Louange-Et-Remerciements', 'Remerciements', 'Remerciements,-Offert']
+    topic = ['Priere,-En-Tant-Que-Louange-Et-Remerciements', 'Remerciements',
+             'Remerciements,-Offert']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
@@ -141,7 +148,9 @@ namespace :scrap do
 
   def bible_courage_travail
     puts 'bible_courage_travail'
-    topic = ['Avoir-Confiance-En-Le-Travail', 'Dur-Travail', 'Dieu-Travaillant-Toujours', 'Faire-Son-Travail', 'Les-Avantages-Du-Travail']
+    topic = ['Avoir-Confiance-En-Le-Travail', 'Dur-Travail',
+             'Dieu-Travaillant-Toujours', 'Faire-Son-Travail',
+             'Les-Avantages-Du-Travail']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
@@ -159,7 +168,8 @@ namespace :scrap do
 
   def bible_courage_verite
     puts 'bible_courage_verite'
-    topic = ['Dire-La-Verite', 'Faire-La-Verite', 'Le-Christ-Disant-La-Verite', 'Marcher-Dans-La-Verite', 'Verite']
+    topic = ['Dire-La-Verite', 'Faire-La-Verite', 'Le-Christ-Disant-La-Verite',
+             'Marcher-Dans-La-Verite', 'Verite'] 
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
       CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
