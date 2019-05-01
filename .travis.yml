@@ -6,12 +6,12 @@ sudo: required
 before_install:
 - sudo apt-get update
 - sudo apt-get install google-chrome-stable
+- gem install bundler -v '2.0.1'
 addons:
   postgresql: '9.6'
 before_script:
   - psql -c 'create database menu_test;' -U postgres
 script:
-  - bundle exec rake db:schema:load
   - bundle exec rake db:test:prepare
   - SECRET_KEY_BASE=a RAILS_ENV=production bundle exec rake assets:precompile
   - bundle exec rspec
