@@ -27,9 +27,7 @@ namespace :scrap do
     topic = ['Amour-Parental', 'Enfants,-Amour-Des-Parents', 'Prendre-Soin-Des-Parents']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Love', theme: 'Parent')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
@@ -38,31 +36,27 @@ namespace :scrap do
     topic = ['Enfants-Dans-La-Foi', 'Enfants,-Dans-Les-Miracles-De-Jesus', 'Enfants,-Besoins-De']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Love', theme: 'Child')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_amour_conjoint
     puts 'bible_amour_conjoint'
-    topic = ['Devoir-Des-Maris-Envers-Les-Epouses', 'Etre-Un-Mari', 'Mariage,-Le-Marie', 'Enfants,-Besoins-De']
+    topic = ['Devoir-Des-Maris-Envers-Les-Epouses', 'Etre-Un-Mari', 'Mariage,-Le-Marie',
+             'Enfants,-Besoins-De']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Love', theme: 'Partner')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_amour_seigneur
     puts 'bible_amour_seigneur'
-    topic = ['Avoir-Confiance-En-L~amour-De-Dieu', 'Amour-Bienveillant-De-Dieu', 'Dieu-Montre-L~amour-Bienveillant',  'Jesus-Christ,-Amour-De']
+    topic = ['Avoir-Confiance-En-L~amour-De-Dieu', 'Amour-Bienveillant-De-Dieu',
+             'Dieu-Montre-L~amour-Bienveillant', 'Jesus-Christ,-Amour-De']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Love', theme: 'Lord')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
@@ -71,20 +65,17 @@ namespace :scrap do
     topic = ['Bonte-Fraternelle', 'Amour-Fraternel']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Love', theme: 'Friends')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_pardon_peche
     puts 'bible_pardon_peche'
-    topic = ['Pardon-Des-Peches', 'Pardon-Par-Le-Repentir', 'Pardon,-Divin', 'Pardon,-Dans-Le-Ministere-Du-Christ', 'Dieu-A-Pardonne']
+    topic = ['Pardon-Des-Peches', 'Pardon-Par-Le-Repentir', 'Pardon,-Divin',
+             'Pardon,-Dans-Le-Ministere-Du-Christ', 'Dieu-A-Pardonne']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Forgiveness', theme: 'Sin')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
@@ -93,9 +84,7 @@ namespace :scrap do
     topic = ['Pardonner-Aux-Autres', 'Pardonner-Aux-Ennemis', 'Se-Pardonner-Les-Uns-Les-Autres']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Forgiveness', theme: 'Distant')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
@@ -104,20 +93,17 @@ namespace :scrap do
     topic = ['Crainte-De-Dieu', 'Crainte-De-Dieu,-Exemples-De', 'Crainte-De-Dieu,-Resultats-De']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Faith', theme: 'Fear')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_foi_esperance
     puts 'bible_foi_esperance'
-    topic = ['Attitudes-D~espoir', 'Espoir,-En-Dieu', 'Espoir,-En-Tant-Que-Confiance', 'Espoir,-Exemples-De', 'Espoir,-Resultats-De-Son-Absence']
+    topic = ['Attitudes-D~espoir', 'Espoir,-En-Dieu', 'Espoir,-En-Tant-Que-Confiance',
+             'Espoir,-Exemples-De', 'Espoir,-Resultats-De-Son-Absence']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Faith', theme: 'Hope')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
@@ -126,9 +112,7 @@ namespace :scrap do
     topic = ['Sante', 'Miracles-Du-Christ', 'Miracles-De-Pierre', 'Miracles-De-Paul']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Health', theme: 'Body')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
@@ -137,42 +121,39 @@ namespace :scrap do
     topic = ['Recouvrer-La-Sante-Mentale', 'Ames-Vivantes', 'Ames-Gagnantes']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Health', theme: 'Soul')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_sante_esprit
     puts 'bible_sante_esprit'
-    topic = ['Coeur,-Et-L~esprit-Saint', 'Confiance,-De-L~esprit-Saint', 'Don-De-L~esprit-Saint', 'Esprit,-De-Dieu', 'Etre-Rempli-Par-L~esprit']
+    topic = ['Coeur,-Et-L~esprit-Saint', 'Confiance,-De-L~esprit-Saint',
+             'Don-De-L~esprit-Saint', 'Esprit,-De-Dieu',
+             'Etre-Rempli-Par-L~esprit']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Health', theme: 'Spirit')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_remerciement_none
     puts 'bible_remerciement_none'
-    topic = ['Priere,-En-Tant-Que-Louange-Et-Remerciements', 'Remerciements', 'Remerciements,-Offert']
+    topic = ['Priere,-En-Tant-Que-Louange-Et-Remerciements', 'Remerciements',
+             'Remerciements,-Offert']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Praises', theme: 'None')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_courage_travail
     puts 'bible_courage_travail'
-    topic = ['Avoir-Confiance-En-Le-Travail', 'Dur-Travail', 'Dieu-Travaillant-Toujours', 'Faire-Son-Travail', 'Les-Avantages-Du-Travail']
+    topic = ['Avoir-Confiance-En-Le-Travail', 'Dur-Travail',
+             'Dieu-Travaillant-Toujours', 'Faire-Son-Travail',
+             'Les-Avantages-Du-Travail']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Courage', theme: 'Work')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
@@ -181,33 +162,17 @@ namespace :scrap do
     topic = ['Jesus-Christ,-Tentation-De', 'Tentation,-Resister']
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Courage', theme: 'Tentation')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
 
   def bible_courage_verite
     puts 'bible_courage_verite'
-    topic = ['Dire-La-Verite', 'Faire-La-Verite', 'Le-Christ-Disant-La-Verite', 'Marcher-Dans-La-Verite', 'Verite']
+    topic = ['Dire-La-Verite', 'Faire-La-Verite', 'Le-Christ-Disant-La-Verite',
+             'Marcher-Dans-La-Verite', 'Verite'] 
     topic.each do |t|
       link = "https://bible.knowing-jesus.com/Fran%C3%A7ais/topics/#{t}"
-      html_file = URI.parse(link).open
-      html_doc = Nokogiri::HTML(html_file)
-      create_verse(html_doc: html_doc, need: 'Courage', theme: 'Truth')
+      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
     end
   end
-
-  def create_verse(args)
-    args[:html_doc].css('.content-box-1').each do |verse|
-      verse_number = verse.css('a')[0].text
-      puts verse_number
-      Verse.where(name: verse_number).first_or_create do |v|
-        v.content = verse.css('.result-wrap').text.strip
-        v.need = args[:need]
-        v.theme = args[:theme]
-      end
-    end
-  end
-
 end

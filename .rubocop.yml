@@ -1,0 +1,11 @@
+require: rubocop-performance
+
+AllCops:
+  Documentation:
+    Enabled: false
+    
+Style/Encoding:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 99

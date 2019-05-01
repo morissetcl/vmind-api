@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VersesController < ApplicationController
   def index
     @verses = Verse.all
