@@ -6,6 +6,7 @@ sudo: required
 before_install:
 - sudo apt-get update
 - sudo apt-get install google-chrome-stable
+- gem install bundler -v '2.0.1'
 addons:
   postgresql: '9.6'
 before_script:
