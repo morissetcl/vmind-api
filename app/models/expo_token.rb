@@ -1,0 +1,2 @@
+class ExpoToken < ApplicationRecord
+end
