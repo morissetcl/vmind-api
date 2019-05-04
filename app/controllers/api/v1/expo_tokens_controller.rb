@@ -3,9 +3,9 @@
 module Api
   module V1
     class ExpoTokensController < Api::BaseController
-      protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
-      protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
-      
+      include ActionController::RequestForgeryProtection
+      protect_from_forgery with: :exception, unless: -> { request.format.json? }
+
       def create
         @expo_token = ExpoToken.create!(expo_token_params)
       end
