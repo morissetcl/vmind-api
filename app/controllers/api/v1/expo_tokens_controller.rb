@@ -3,6 +3,8 @@
 module Api
   module V1
     class ExpoTokensController < Api::BaseController
+      skip_before_action :verify_authenticity_token
+
       def create
         @expo_token = ExpoToken.create!(expo_token_params)
       end
