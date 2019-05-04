@@ -11,7 +11,7 @@ module Api
       private
 
       def expo_token_params
-        params.permit(:expo_token)
+        params.permit(:token)
       end
     end
   end
