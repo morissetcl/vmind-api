@@ -18,7 +18,6 @@ describe 'Admin - Notification', type: :feature do
   scenario 'Create' do
     visit new_admin_notification_path
     expect do
-      fill_in :notification_expo_token, with: 'KImuOIPJ'
       fill_in :notification_title, with: 'Love'
       fill_in :notification_body, with: 'Soyez bénis'
       click_on 'Create Notification'
