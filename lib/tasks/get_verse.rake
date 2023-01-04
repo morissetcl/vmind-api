@@ -38,7 +38,7 @@ namespace :scrap do
     topic = ['Enfants-Dans-La-Foi', 'Enfants,-Dans-Les-Miracles-De-Jesus', 'Enfants,-Besoins-De']
     topic.each do |t|
       link = "#{URL}#{t}"
-      CreateVerse.new(link: link, need: 'Love', theme: 'Enfant').create_verse
+      CreateVerse.new(link: link, need: 'Love', theme: 'Child').create_verse
     end
   end
 
@@ -48,7 +48,7 @@ namespace :scrap do
              'Enfants,-Besoins-De']
     topic.each do |t|
       link = "#{URL}#{t}"
-      CreateVerse.new(link: link, need: 'Love', theme: 'Couple').create_verse
+      CreateVerse.new(link: link, need: 'Love', theme: 'Partner').create_verse
     end
   end
 
@@ -67,7 +67,7 @@ namespace :scrap do
     topic = ['Bonte-Fraternelle', 'Amour-Fraternel']
     topic.each do |t|
       link = "#{URL}#{t}"
-      CreateVerse.new(link: link, need: 'Love', theme: 'Parent').create_verse
+      CreateVerse.new(link: link, need: 'Love', theme: 'Friends').create_verse
     end
   end
 
@@ -86,7 +86,7 @@ namespace :scrap do
     topic = ['Pardonner-Aux-Autres', 'Pardonner-Aux-Ennemis', 'Se-Pardonner-Les-Uns-Les-Autres']
     topic.each do |t|
       link = "#{URL}#{t}"
-      CreateVerse.new(link: link, need: 'Forgiveness', theme: 'Other').create_verse
+      CreateVerse.new(link: link, need: 'Forgiveness', theme: 'Distant').create_verse
     end
   end
 
@@ -134,7 +134,7 @@ namespace :scrap do
              'Etre-Rempli-Par-L~esprit']
     topic.each do |t|
       link = "#{URL}#{t}"
-      CreateVerse.new(link: link, need: 'Health', theme: 'Soul').create_verse
+      CreateVerse.new(link: link, need: 'Health', theme: 'Spirit').create_verse
     end
   end
 
@@ -144,7 +144,17 @@ namespace :scrap do
              'Remerciements,-Offert']
     topic.each do |t|
       link = "#{URL}#{t}"
-      CreateVerse.new(link: link, need: 'Thanks', theme: 'None').create_verse
+      CreateVerse.new(link: link, need: 'Praises', theme: 'None').create_verse
+    end
+  end
+
+  def bible_remerciement_dieu
+    puts 'bible_remerciement_dieu'
+    topic = ['Priere,-En-Tant-Que-Louange-Et-Remerciements', 'Remerciements',
+             'Remerciements,-Offert']
+    topic.each do |t|
+      link = "#{URL}#{t}"
+      CreateVerse.new(link: link, need: 'Praises', theme: 'Answer').create_verse
     end
   end
 
@@ -174,7 +184,7 @@ namespace :scrap do
              'Marcher-Dans-La-Verite', 'Verite']
     topic.each do |t|
       link = "#{URL}#{t}"
-      CreateVerse.new(link: link, need: 'Courage', theme: 'Thruth').create_verse
+      CreateVerse.new(link: link, need: 'Courage', theme: 'Truth').create_verse
     end
   end
 end
